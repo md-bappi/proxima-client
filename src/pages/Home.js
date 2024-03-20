@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProjectDetails from "../components/ProjectDetails";
+import ProjectFrom from "../components/ProjectFrom";
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
@@ -17,7 +18,6 @@ const Home = () => {
 
         setProjects(data);
         setLoading(false);
-        console.log(data);
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -38,7 +38,7 @@ const Home = () => {
             ))}
         </div>
       </div>
-      <div className="right"></div>
+      <ProjectFrom />
     </div>
   );
 };
